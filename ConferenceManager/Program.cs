@@ -1,4 +1,7 @@
 
+using ConferenceManager.Data;
+using ConferenceManager.Services;
+
 namespace ConferenceManager
 {
     public class Program
@@ -14,6 +17,11 @@ namespace ConferenceManager
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddScoped<IEventService, EventService>();
+            builder.Services.AddScoped<IEventModel, EventModel>();
+
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -26,7 +34,6 @@ namespace ConferenceManager
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 
