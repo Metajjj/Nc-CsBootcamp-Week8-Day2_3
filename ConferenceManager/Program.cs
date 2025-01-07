@@ -41,14 +41,14 @@ namespace ConferenceManager
                     ValidateIssuer = true,
                     ValidIssuer = "meta",
                     ValidateAudience = true,
-                    ValidAudience = "confMang",
+                    ValidAudience = "ConfMang",
                     ValidateLifetime = false,
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(key)
                 };
             });
             //JWT token
-            // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IlRlc3QgVXNlciIsImlhdCI6MTczNjI0OTkwNSwiZXhwIjoxNzM5ODUwMDcxLCJpc3MiOiJtZXRhIiwiYXVkIjoiQ29uZk1hbmciLCJyb2xlcyI6W119.Hvaw18wetCrflzIbJzFPUJaohInkWmHfsGTztJxNuVI
+            // geyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IlRlc3QgVXNlciIsImlhdCI6MTczNjI0OTkwNSwiZXhwIjoxNzM5ODUwMDcxLCJpc3MiOiJtZXRhIiwiYXVkIjoiQ29uZk1hbmciLCJyb2xlcyI6W119.Hvaw18wetCrflzIbJzFPUJaohInkWmHfsGTztJxNuVI
 
             var app = builder.Build();
 
