@@ -39,15 +39,16 @@ namespace ConferenceManager
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuer = true,
-                    ValidIssuer = "your-name",
+                    ValidIssuer = "meta",
                     ValidateAudience = true,
-                    ValidAudience = "your-app-name",
+                    ValidAudience = "confMang",
                     ValidateLifetime = false,
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(key)
                 };
             });
-
+            //JWT token
+            // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IlRlc3QgVXNlciIsImlhdCI6MTczNjI0OTkwNSwiZXhwIjoxNzM5ODUwMDcxLCJpc3MiOiJtZXRhIiwiYXVkIjoiQ29uZk1hbmciLCJyb2xlcyI6W119.Hvaw18wetCrflzIbJzFPUJaohInkWmHfsGTztJxNuVI
 
             var app = builder.Build();
 
