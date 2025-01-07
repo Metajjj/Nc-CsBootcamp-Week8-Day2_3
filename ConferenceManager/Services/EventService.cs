@@ -6,23 +6,30 @@ namespace ConferenceManager.Services
     {
         public List<Event> GetAllEvents();
         public Event GetEventById(string id);
+
+        public bool AddEvent(Event e);
     }
     public class EventService : IEventService
     {
-        private IEventModel eventData;
+        private IEventModel eventModel;
         public EventService(IEventModel ed)
         {
-            eventData = ed;
+            eventModel = ed;
+        }
+
+        public bool AddEvent(Event e)
+        {
+            return eventModel.AddEvent(e);
         }
 
         public List<Event> GetAllEvents()
         {
-            return eventData.GetAllEvents();
+            return eventModel.GetAllEvents();
         }
 
         public Event GetEventById(string id)
         {
-            return eventData.GetEventById(int.Parse(id));
+            return eventModel.GetEventById(int.Parse(id));
         }
     }
 }

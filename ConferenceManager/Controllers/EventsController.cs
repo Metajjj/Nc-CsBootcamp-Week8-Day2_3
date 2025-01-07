@@ -1,6 +1,9 @@
 ﻿using System.Text.Json;
 
+using ConferenceManager.Data;
 using ConferenceManager.Services;
+
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ConferenceManager.Controllers
@@ -32,6 +35,13 @@ namespace ConferenceManager.Controllers
             }
             catch (FormatException ex)
             { return BadRequest("param is NaN! (not a number)"); }
+        }
+
+        [Authorize]
+        [HttpPost]
+        public IActionResult AddEvent(Event e)
+        {
+            return eventService.AddEvent(e) ? Ok(e.Title + " added!") : BadRequest("Err occured!");
         }
     }
 }

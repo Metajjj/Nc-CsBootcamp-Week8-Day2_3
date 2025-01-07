@@ -2,7 +2,10 @@
 {
     public class Event
     {
-        public int Id { get; set; }
+        private int id;
+        public int Id { get { return id; } set { id = value < 1 ? 1 : value; } }
+                            //Custom range limitation
+
         public string Title { get; set; }
         public DateOnly Date { get; set; }
         public string Venue { get; set; }
